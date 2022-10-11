@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+sudo go run main.go &
+pid=$!
+sleep 10s
+sudo ip addr add 192.168.0.1/24 dev tun0
+sudo ip link set up dev tun0
+wait $pid

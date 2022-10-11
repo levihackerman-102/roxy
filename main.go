@@ -17,6 +17,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	var frame ethernet.Frame
 
 	for {
@@ -29,6 +30,6 @@ func main() {
 		log.Printf("Dst: %s\n", frame.Destination())
 		log.Printf("Src: %s\n", frame.Source())
 		log.Printf("Ethertype: % x\n", frame.Ethertype())
-		log.Printf("Payload: % x\n", frame.Payload())
+		log.Printf("%d bytes recieved   Payload : % x\n\n\n", len(frame.Payload()), frame.Payload())
 	}
 }
